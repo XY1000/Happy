@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  画板
+//
+//  Created by tmp on 16/2/4.
+//  Copyright © 2016年 tmp. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "CustomDefine.h"
+
+#import "RESideMenu.h"
+
+#import "Chameleon.h"
+
+#import "SVProgressHUD.h"
+
+#import "Masonry.h"
+
+#import "HXYTool.h"
+
+#import "Utility.h"
+
+#import "CommonDefine.h"
+
+#import "SDWebImage-umbrella.h"
+
+#endif /* PrefixHeader_pch */
