@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kmB-PL-L8b">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="9OC-XO-k8d">
+            <objects>
+                <tabBarController id="kmB-PL-L8b" customClass="TabBarController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ika-49-eo8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="UgW-Kf-RFO" kind="relationship" relationship="viewControllers" id="hH7-oJ-qw1"/>
+                        <segue destination="zCV-jk-KxO" kind="relationship" relationship="viewControllers" id="ElL-ug-Rie"/>
+                        <segue destination="l3o-ey-7ba" kind="relationship" relationship="viewControllers" id="3n4-1O-VoK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bw1-Tv-E6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="262" y="-595"/>
+        </scene>
+        <!--Video Controller-->
+        <scene sceneID="c6d-3c-TqG">
+            <objects>
+                <viewController storyboardIdentifier="VideoController" id="iFy-XR-cSC" customClass="VideoController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YXp-XK-Ipf"/>
+                        <viewControllerLayoutGuide type="bottom" id="S2S-V4-5fK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WFW-Cl-Yhw">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eXy-Pv-9Tp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iFy-XR-cSC" id="fsz-dC-ftx"/>
+                                    <outlet property="delegate" destination="iFy-XR-cSC" id="hqN-CG-uDc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="S2S-V4-5fK" firstAttribute="top" secondItem="eXy-Pv-9Tp" secondAttribute="bottom" id="Jjt-Zf-nav"/>
+                            <constraint firstAttribute="trailing" secondItem="eXy-Pv-9Tp" secondAttribute="trailing" id="cWg-Tb-dL7"/>
+                            <constraint firstItem="eXy-Pv-9Tp" firstAttribute="leading" secondItem="WFW-Cl-Yhw" secondAttribute="leading" id="hMs-YK-gD9"/>
+                            <constraint firstItem="eXy-Pv-9Tp" firstAttribute="top" secondItem="YXp-XK-Ipf" secondAttribute="bottom" id="u9p-A1-oqr"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Bx9-ba-kXJ" appends="YES" id="bze-Rr-3u9"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="mgs-S3-UPa"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="swipGes" destination="Bx9-ba-kXJ" id="QZa-gJ-AyZ"/>
+                        <outlet property="tableView" destination="eXy-Pv-9Tp" id="ANj-QN-ZsQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-ta-2Zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Bx9-ba-kXJ">
+                    <connections>
+                        <action selector="swipAvtion:" destination="iFy-XR-cSC" id="EVp-2g-4JN"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1279" y="-763"/>
+        </scene>
+        <!--Text Controller-->
+        <scene sceneID="dtX-gA-uQj">
+            <objects>
+                <viewController id="DAl-cH-usx" customClass="TextController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ds7-XY-Z75"/>
+                        <viewControllerLayoutGuide type="bottom" id="eY6-Mu-VbJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Arq-GZ-xF6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X5t-eb-dZ8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="X5t-eb-dZ8" secondAttribute="trailing" id="QIH-Lw-rUr"/>
+                            <constraint firstItem="eY6-Mu-VbJ" firstAttribute="top" secondItem="X5t-eb-dZ8" secondAttribute="bottom" id="dZt-Y1-dPY"/>
+                            <constraint firstItem="X5t-eb-dZ8" firstAttribute="leading" secondItem="Arq-GZ-xF6" secondAttribute="leading" id="gpa-sR-fQf"/>
+                            <constraint firstItem="X5t-eb-dZ8" firstAttribute="top" secondItem="ds7-XY-Z75" secondAttribute="bottom" id="x22-VX-mhz"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EjX-Ku-PvP" appends="YES" id="bdq-v9-Dtl"/>
+                            <outletCollection property="gestureRecognizers" destination="97h-NV-OoJ" appends="YES" id="PcS-5S-ud7"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="tFx-Jg-adi"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="swipGes" destination="EjX-Ku-PvP" id="9UQ-uU-nmz"/>
+                        <outlet property="tableView" destination="X5t-eb-dZ8" id="RXa-gq-fJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USs-sM-IIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="EjX-Ku-PvP">
+                    <connections>
+                        <action selector="GestureAction:" destination="DAl-cH-usx" id="Y8J-Ck-xRH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="97h-NV-OoJ">
+                    <connections>
+                        <action selector="rightGesture:" destination="DAl-cH-usx" id="sqf-1a-jNM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1279" y="-114"/>
+        </scene>
+        <!--游戏百科-->
+        <scene sceneID="ZeL-zS-Bcd">
+            <objects>
+                <viewController id="l3o-ey-7ba" customClass="GameController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Re-Gf-tcU"/>
+                        <viewControllerLayoutGuide type="bottom" id="d6a-dX-qTk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UgV-J8-hPW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="游戏百科" image="Found" selectedImage="Found_press" id="dXS-ro-kvc"/>
+                    <navigationItem key="navigationItem" id="Efm-Gn-DZP"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVd-S8-IsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="530"/>
+        </scene>
+        <!--视频-->
+        <scene sceneID="2HV-jX-bRw">
+            <objects>
+                <navigationController title="视频" automaticallyAdjustsScrollViewInsets="NO" id="UgW-Kf-RFO" customClass="NavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="视频" image="home" selectedImage="home_press" id="lWe-0N-bat"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="eJK-xK-O0G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iFy-XR-cSC" kind="relationship" relationship="rootViewController" id="ju2-8q-TMn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wm0-fw-6gV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="-763"/>
+        </scene>
+        <!--段子-->
+        <scene sceneID="4Dz-TI-TQH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zCV-jk-KxO" customClass="NavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="段子" image="newstab" selectedImage="newstab_press" id="Xke-FC-Bls"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="47r-Gf-Sqy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DAl-cH-usx" kind="relationship" relationship="rootViewController" id="pMy-lx-d0g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oef-59-hgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="-114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Found" width="26" height="26"/>
+        <image name="Found_press" width="26" height="26"/>
+        <image name="home" width="26" height="26"/>
+        <image name="home_press" width="26" height="26"/>
+        <image name="newstab" width="26" height="26"/>
+        <image name="newstab_press" width="26" height="26"/>
+    </resources>
+</document>
